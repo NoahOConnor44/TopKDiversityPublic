@@ -11,16 +11,15 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
     helperFunctions helpers;
-    if(argc != 4)
+    if(argc != 3)
     {
-        cout << "To run the program: './main datasetFile searchTerm kValue'\n";
+        cout << "To run the program: './main searchTerm kValue'\n";
         exit(1);
     }
     else
     {
-        string filename = argv[1];
-        string query = argv[2];
-        int k = stoi(argv[3]);
+        string query = argv[1];
+        int k = stoi(argv[2]);
 
         helperFunctions help;
         std::map<string, std::map<string, std::vector<float>>> scores = help.calculate_keyword_scores();
@@ -33,7 +32,7 @@ int main(int argc, char const *argv[])
             cout << it->first << "\t" << it->second << endl;
         }
 
-        help.topK(filename,query,k);
+        //help.topK(filename,query,k);
 
         vector<node> adj_list;
         string edgesFromPaper[6] = {"10 5 3 4", "8 5 3 4", "7 1 2 6", "7 1 2 6", "6 1 2 6", "1 5 3 4"};
@@ -50,6 +49,7 @@ int main(int argc, char const *argv[])
         auto result = div.doDivAStar(&adj_list,k);
         auto answer = result.getSolution();
         cout << "final answer alex: \n";
+        
         for(int i = 0; i < answer.size(); i++)
         {
             cout << answer.at(i).getNodeNum() << endl;
