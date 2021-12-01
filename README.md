@@ -7,6 +7,6 @@ Database Systems Research Paper Programming Implementation
 - C++ 17
 
 # Running the program
-- To run the program: './main searchTerm kValue'
-- Need to have the folder called datasets that is made up of .txt files for the dataset for it to read through for scoring. 
-- metadata files will be made for each query so if its reran its faster and doesnt have to rescore all the documents for that query term.
+- To run the program: './main searchTerm kValue' (it will look for the dataset files in the dataset folder automatically)
+- Need to have the folder called datasets that is made up of .txt files for the dataset for it to read through for scoring. (has the reuters dataset in it currently)
+- metadata files will be made for the query
